@@ -7,8 +7,7 @@ import os
 teachers = []
 students = []
 schoolClasses = []
-a = 7
-b = 5
+
 os.system('cls')
 
 
