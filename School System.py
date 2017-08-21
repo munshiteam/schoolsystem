@@ -255,64 +255,6 @@ def AddClass():
 
 def DeleteClass():
     print("Work in progress ")
-"""
-def AddClass():
-
-    os.system('cls')
-    print("-" + "=" * 8 + "|  ADD A CLASS  |" + "=" * 8 + "-")
-    classGrade = input("Enter class grade ")
-    while True:
-        if len(teachers) <= 0:
-            print("No teachers are available \n")
-            fit = input("Would you like to add a teacher?")
-            if fit == "y" or fit == "Y" or fit == "yes" or fit == "Yes":
-                TeacherMenu()
-            else:
-                break
-        else:
-            print('Which Teacher will be teaching this class?')
-            print("No.\tNAME\t\tAGE\t\tQUALIFICATION")
-            counter = 1
-            for teacher in teachers:
-                print(str(counter) + "\t" + teacher.name + "\t\t" + teacher.age + "\t\t" + teacher.qualification)
-                counter += 1
-            teacherIndexToAdd = int(input("Which Teacher do you want to add.  Select number")) 
-            if teacherIndexToAdd >= counter:
-                input("Not a valid selection for teacher to add. Do you still want to continue")
-            else:
-                while True:
-                    if len(students) <= 0:
-                        print("No students are registered")
-                        ipt = input("Would you like to add students")
-                        if ipt == "y" or ipt == "Y" or ipt == "yes" or ipt == "Yes":
-                            StudentMenu()
-                        else:
-                            break
-                    else:
-                        studentsListToAdd=[]
-                        while True:
-                            print('Which Student will be studying in this class?')
-                            print("No.\tNAME\t\tAGE\t\t")
-                            counter = 1
-                            for student in students:
-                                print(str(counter) + "\t" + student.name + "\t\t" + student.age)
-                                counter += 1
-                            studentIndexToAdd = int(input("Which Student do you want to register.  Select number"))
-                            if studentIndexToAdd >= counter:
-                                input("Not a valid selection for student to add. Press any key to continue...")
-                            else:
-                                if counter ==-1 or len(students)==0:
-                                    break
-                                studentToAdd = students.pop(studentIndexToAdd-1)
-                                studentsListToAdd.append(studentToAdd)
-                                ipt = input("Would you like to register more students")
-                                if ipt != "y" or ipt != "Y" or ipt != "yes" or ipt != "Yes":
-                                    break
-                        schoolClasses.append(SchoolClass(teachers.pop(teacherIndexToAdd -1),classGrade,studentsListToAdd))
-                        break
-        break
-"""
-
 
 def PrintSchoolClass():
     print("No.\tGrade\t\t\t\tTeacher\t\t\t\t\t\t\t\t\t\tStudents")
