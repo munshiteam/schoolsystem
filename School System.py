@@ -83,7 +83,7 @@ def TeacherMenu():
         print(" ")
         print("What would you like to do? \n")
         print("1. Add A Teacher")
-        print("2. Edit Teachers")
+        print("2. Edit")
         print("3. Delete A Teacher")
         print("4. See Previous/Saved Teachers")
         print("5. Back\n")
@@ -91,7 +91,7 @@ def TeacherMenu():
         if opt == "1":
             AddTeacher()
         elif opt == "2":
-            print("EditTeacher() work in progress")
+            Editer()
         elif opt == "3":
             DeleteTeacher()
         elif opt == "4":
@@ -115,7 +115,16 @@ def AddTeacher():
     input("Press any key to continue..")
 
 
-def DeleteTeacher():
+def Editer():
+    print("workIn Progress")
+    print("-" + "=" * 8 + "|  EDITER  |" + "=" * 8 + "-")
+    print("1. Teacher")
+    print("2. Student")
+    print("3. Class")
+    print("4. Back\n")
+    opt = input(" Please Choose one of the above (ex. 1,2,3,4 or 5)")
+    if opt == "1":
+       EditTeacher()
     os.system('cls')
     print("-" + "=" * 8 + "|  DELETE A TEACHER  |" + "=" * 8 + "-")
 
@@ -127,6 +136,21 @@ def DeleteTeacher():
         counter += 1
     teacherIndexToAdd = int(input("Select number"))
     teachers.pop(teacherIndexToAdd - 1)
+
+def DeleteTeacher():
+    os.system('cls')
+    print("-" + "=" * 8 + "|  DELETE A TEACHER  |" + "=" * 8 + "-")
+
+    print('Which Teacher will you be deleting?')
+    print("No.\tNAME\t\tAGE")
+    counter = 1
+    for teacher in teachers:
+        print(str(counter) + "\t" + teacher.name + "\t\t" + teachert.age)
+        counter += 1
+    teacherIndexToAdd = int(input("Select number"))
+    teachers.pop(teacherIndexToAdd - 1)
+
+
 
 
 def SeeTeachers():
@@ -162,8 +186,10 @@ def StudentMenu():
         else:
             input("Not a valid selection. Press any key to continue...")
 
+
 def EditStudent():
     print("Work in progess")
+
 
 def AddStudent():
     os.system('cls')
@@ -175,6 +201,7 @@ def AddStudent():
     print(studentvalue)
     input("Press any key to continue..")
 
+
 def DeleteStudent():
     os.system('cls')
     print("-" + "=" * 8 + "|  DELETE A STUDENT  |" + "=" * 8 + "-")
@@ -183,10 +210,11 @@ def DeleteStudent():
     print("No.\tNAME\t\tAGE")
     counter = 1
     for student in students:
-        print(str(counter) + "\t" + student.name + "\t\t" + student.age )
+        print(str(counter) + "\t" + student.name + "\t\t" + student.age)
         counter += 1
     studentIndexToAdd = int(input("Select number"))
     students.pop(studentIndexToAdd - 1)
+
 
 def SeeStudent():
     os.system('cls')
@@ -252,8 +280,10 @@ def AddClass():
     else:
         input("No Teachers or Student are available. Kindly use their menu to register them \nPress any key...")
 
+
 def DeleteClass():
     print("Work in progress ")
+
 
 def PrintSchoolClass():
     print("No.\tGrade\t\t\t\tTeacher\t\t\t\t\t\t\t\t\t\tStudents")
