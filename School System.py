@@ -3,7 +3,6 @@ from Teacher import *
 from Student import *
 from SchoolClass import *
 import os
-
 teachers = []
 students = []
 schoolClasses = []
@@ -12,6 +11,7 @@ os.system('cls')
 
 
 def initialize():
+    print("Previously saved teachers, students, \b classes")
     try:
         if os.path.exists("teacher_dict.pickle"):
             with open("teacher_dict.pickle", "rb") as f:
@@ -91,7 +91,7 @@ def TeacherMenu():
         if opt == "1":
             AddTeacher()
         elif opt == "2":
-            Editer()
+            EditTeacher()
         elif opt == "3":
             DeleteTeacher()
         elif opt == "4":
@@ -100,6 +100,33 @@ def TeacherMenu():
             break
         else:
             input("Not a valid selection. Press any key to continue...")
+
+def EditTeacher():
+    os.system('cls')
+    print("-" + "=" * 8 + "|  EDIT A TEACHER  |" + "=" * 8 + "-")
+
+    print('Which Teacher will you be editing?')
+    print("No.\tNAME\t\tAGE")
+    counter = 1
+    for teacher in teachers:
+        print(str(counter) + "\t" + teacher.name + "\t\t" + teacher.age)
+        counter += 1
+    teacherIndexToAdd = int(input("Select number"))
+    teacherToEdit = teachers[teacherIndexToAdd - 1]
+    print("1. Teacher Name: ", teacherToEdit.name)
+    print("2. Teacher Age: ", teacherToEdit.age)
+    print("3. Teacher Qualification: ", teacherToEdit.qualification)
+    opt = input("4. Edit Teacher's values")
+    if opt == "1":
+        teacherToEdit.name = input("Enter teacher new name: ").title()
+    elif opt == "2":
+        teacherToEdit.age = input("Enter teacher new age: ")
+    elif opt == "3":
+        teacherToEdit.qualification = input("Enter teacher new qualification: ")
+    elif opt == "4":
+        teacherToEdit.name = input("Enter teacher new name: ").title()
+        teacherToEdit.age = input("Enter teacher new age: ")
+        teacherToEdit.qualification = input("Enter teacher new qualification: ")
 
 
 def AddTeacher():
@@ -114,29 +141,6 @@ def AddTeacher():
     print(teachervalue)
     input("Press any key to continue..")
 
-
-def Editer():
-    print("workIn Progress")
-    print("-" + "=" * 8 + "|  EDITER  |" + "=" * 8 + "-")
-    print("1. Teacher")
-    print("2. Student")
-    print("3. Class")
-    print("4. Back\n")
-    opt = input(" Please Choose one of the above (ex. 1,2,3,4 or 5)")
-    if opt == "1":
-       EditTeacher()
-    os.system('cls')
-    print("-" + "=" * 8 + "|  DELETE A TEACHER  |" + "=" * 8 + "-")
-
-    print('Which Teacher will you be deleting?')
-    print("No.\tNAME\t\tAGE\t\tQUALIFICATION")
-    counter = 1
-    for teacher in teachers:
-        print(str(counter) + "\t" + teacher.name + "\t\t" + teacher.age + "\t\t" + teacher.qualification)
-        counter += 1
-    teacherIndexToAdd = int(input("Select number"))
-    teachers.pop(teacherIndexToAdd - 1)
-
 def DeleteTeacher():
     os.system('cls')
     print("-" + "=" * 8 + "|  DELETE A TEACHER  |" + "=" * 8 + "-")
@@ -145,7 +149,7 @@ def DeleteTeacher():
     print("No.\tNAME\t\tAGE")
     counter = 1
     for teacher in teachers:
-        print(str(counter) + "\t" + teacher.name + "\t\t" + teachert.age)
+        print(str(counter) + "\t" + teacher.name + "\t\t" + teacher.age)
         counter += 1
     teacherIndexToAdd = int(input("Select number"))
     teachers.pop(teacherIndexToAdd - 1)

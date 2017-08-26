@@ -1,6 +1,6 @@
 
 class Teacher():
-    def __init__(self, name, age, qualification,):
+    def __init__(self, name, age, qualification):
         self.name = name
         self.age = age
         self.qualification = qualification
