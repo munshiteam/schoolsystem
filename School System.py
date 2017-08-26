@@ -192,7 +192,29 @@ def StudentMenu():
 
 
 def EditStudent():
-    print("Work in progess")
+
+        os.system('cls')
+        print("-" + "=" * 8 + "|  EDIT A STUDENT  |" + "=" * 8 + "-")
+
+        print('Which Student will you be editing?')
+        print("No.\tNAME\t\tAGE")
+        counter = 1
+        for student in students:
+            print(str(counter) + "\t" + student.name + "\t\t" + student.age)
+            counter += 1
+        studentIndexToAdd = int(input("Select number"))
+        studentToEdit = students[studentIndexToAdd - 1]
+        print("1. Student Name: ", studentToEdit.name)
+        print("2. Student Age: ", studentToEdit.age)
+        opt = input("3. Edit Student's values")
+        if opt == "1":
+            studentToEdit.name = input("Enter student new name: ").title()
+        elif opt == "2":
+            studentToEdit.age = input("Enter student new age: ")
+        elif opt == "3":
+            studentToEdit.name = input("Enter student new name: ").title()
+            studentToEdit.age = input("Enter student new age: ")
+
 
 
 def AddStudent():
