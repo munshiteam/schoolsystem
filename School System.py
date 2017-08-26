@@ -7,10 +7,8 @@ teachers = []
 students = []
 schoolClasses = []
 
-os.system('cls')
-
-
 def initialize():
+    os.system('cls')
     print("Previously saved teachers, students, \b classes")
     try:
         if os.path.exists("teacher_dict.pickle"):
