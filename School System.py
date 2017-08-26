@@ -124,7 +124,7 @@ def Editer():
     print("4. Back\n")
     opt = input(" Please Choose one of the above (ex. 1,2,3,4 or 5)")
     if opt == "1":
-       EditTeacher()
+        print("Work in progress")
     os.system('cls')
     print("-" + "=" * 8 + "|  DELETE A TEACHER  |" + "=" * 8 + "-")
 
